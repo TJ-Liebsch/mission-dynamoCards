@@ -137,3 +137,6 @@ backend/__pycache__/
 _text-to-json.py
 tasks.txt
 ai-data.json
+
+# Exclude Service Account Key
+backend/service-account.json

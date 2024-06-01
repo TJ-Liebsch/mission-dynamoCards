@@ -12,33 +12,33 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# class GeminiProcessor:
-#     def __init__(self, model_name, project):
-#         self.model = VertexAI(model_name=model_name, project=project)
+class GeminiProcessor:
+    def __init__(self, model_name, project):
+        self.model = VertexAI(model_name=model_name, project=project)
         
-#     def generate_document_summary(self, documents: list, **args):
+    def generate_document_summary(self, documents: list, **args):
         
-#         chain_type = "map_reduce" if len(documents) > 10 else "stuff"
+        chain_type = "map_reduce" if len(documents) > 10 else "stuff"
         
-#         chain = load_summarize_chain(
-#             llm = self.model,
-#             chain_type = chain_type,
-#             **args
-#         )
+        chain = load_summarize_chain(
+            llm = self.model,
+            chain_type = chain_type,
+            **args
+        )
         
-#         return chain.run(documents)
+        return chain.run(documents)
     
-#     def count_total_tokens(self, docs: list):
-#         temp_model = GenerativeModel("gemini-1.0-pro")
-#         total = 0
-#         logger.info("Counting total billable characters...")
-#         for doc in tqdm(docs):
-#             total += temp_model.count_tokens(doc.page_content).total_billable_characters
-#         return total
+    # def count_total_tokens(self, docs: list):
+    #     temp_model = GenerativeModel("gemini-1.0-pro")
+    #     total = 0
+    #     logger.info("Counting total billable characters...")
+    #     for doc in tqdm(docs):
+    #         total += temp_model.count_tokens(doc.page_content).total_billable_characters
+    #     return total
         
     
-#     def get_model(self):
-#         return self.model
+    # def get_model(self):
+    #     return self.model
 
 class YoutubeProcessor:
     # Retrieve the full transcript
