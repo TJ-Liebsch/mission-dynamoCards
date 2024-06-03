@@ -140,3 +140,6 @@ ai-data.json
 
 # Exclude Service Account Key
 backend/service-account.json
+
+# Exclude GCL project ID
+secrets.toml
